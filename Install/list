@@ -2,7 +2,7 @@
 #====================================================
 #	@VENHABRABO
 #====================================================
-_lvk=$(wget -qO- https://raw.githubusercontent.com/VENHABRABO/SSHPLUS/master/Sistema/versao)
+_lvk=$(wget -qO- https://raw.githubusercontent.com/VENHABRABO/SSHPLUS/main/Sistema/versao)
 IP=$(wget -qO- ipv4.icanhazip.com)
 IP2=$(wget -qO- http://whatismyip.akamai.com/)
 [[ "$IP" != "$IP2" ]] && ipdovps="$IP2" || ipdovps="$IP"
@@ -62,7 +62,7 @@ clear
 #INICIO AUTOMATICO' >/etc/autostart
 	chmod +x /etc/autostart
 } || {
-	[[ $(ps x | grep "bot_plus" | grep -v grep | wc -l) != '0' ]] && wget -qO- https://raw.githubusercontent.com/VENHABRABO/SSHPLUS/master/Install/ShellBot.sh
+	[[ $(ps x | grep "bot_plus" | grep -v grep | wc -l) != '0' ]] && wget -qO- https://raw.githubusercontent.com/VENHABRABO/SSHPLUS/main/Install/ShellBot.sh
 	for proc in $(ps x | grep 'dmS' | grep -v 'grep' | awk {'print $1'}); do
 		screen -r -S "$proc" -X quit	
 done
